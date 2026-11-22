@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>MCVault.VN — Tìm Mod Tiếng Việt & Tải Trực Tiếp</title>
+  <title>MCVault.VN — Kho Mod, Modpack &amp; Addon Tiếng Việt</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=VT323&display=swap" rel="stylesheet">
@@ -23,8 +23,8 @@
       --mc-purple: #b366ff;
       --mc-red: #ff5555;
       --text-main: #f2f2f2;
-      --text-muted: #a0a0a0;
-      --text-dim: #757575;
+      --text-muted: #a8a8a8;
+      --text-dim: #787878;
       --radius-md: 10px;
       --radius-lg: 14px;
     }
@@ -42,7 +42,7 @@
       color: var(--text-main);
       line-height: 1.5;
       min-height: 100vh;
-      background-image: 
+      background-image:
         radial-gradient(circle at 15% 10%, rgba(82, 164, 53, 0.08) 0%, transparent 45%),
         radial-gradient(circle at 85% 90%, rgba(51, 214, 255, 0.06) 0%, transparent 45%);
     }
@@ -52,9 +52,8 @@
       letter-spacing: 0.5px;
     }
 
-    /* Header */
     header {
-      background: rgba(24, 24, 24, 0.94);
+      background: rgba(24, 24, 24, 0.95);
       backdrop-filter: blur(12px);
       border-bottom: 2px solid var(--border-color);
       position: sticky;
@@ -139,14 +138,12 @@
       50% { opacity: 0.4; transform: scale(0.85); }
     }
 
-    /* Main Container */
     .container {
       max-width: 1280px;
       margin: 0 auto;
       padding: 18px 16px 60px;
     }
 
-    /* Search & Filter Panel */
     .search-panel {
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
@@ -241,6 +238,11 @@
       border-bottom-width: 1px;
     }
 
+    .mc-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
     .mc-btn-secondary {
       background: #303030;
       border-bottom: 3px solid #1c1c1c;
@@ -251,7 +253,6 @@
       background: #3d3d3d;
     }
 
-    /* Translation Notice */
     .translate-banner {
       display: none;
       align-items: center;
@@ -280,13 +281,12 @@
       font-family: monospace;
     }
 
-    /* Quick Vietnamese Tags */
     .quick-tags-wrap {
       display: flex;
       align-items: center;
       gap: 6px;
       overflow-x: auto;
-      padding-bottom: 6px;
+      padding-bottom: 8px;
       margin-bottom: 12px;
       scrollbar-width: thin;
     }
@@ -312,7 +312,7 @@
       border: 1px solid #3c3c3c;
       color: #ddd;
       font-size: 12px;
-      padding: 5px 11px;
+      padding: 6px 11px;
       border-radius: 20px;
       cursor: pointer;
       white-space: nowrap;
@@ -325,14 +325,13 @@
       color: #98f576;
     }
 
-    /* Filters Row */
     .filters-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 10px;
-      padding-top: 10px;
+      padding-top: 12px;
       border-top: 1px solid #2e2e2e;
     }
 
@@ -410,7 +409,6 @@
       color: #fff;
     }
 
-    /* Status Bar */
     .status-bar {
       display: flex;
       justify-content: space-between;
@@ -422,7 +420,6 @@
       gap: 8px;
     }
 
-    /* Grid View */
     .mods-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
@@ -506,7 +503,7 @@
 
     .mod-desc {
       font-size: 13px;
-      color: #c4c4c4;
+      color: #c8c8c8;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
@@ -536,7 +533,6 @@
       font-size: 13px;
     }
 
-    /* Table View */
     .table-wrap {
       display: none;
       overflow-x: auto;
@@ -586,7 +582,6 @@
       flex-shrink: 0;
     }
 
-    /* Pagination */
     .pagination {
       display: flex;
       justify-content: center;
@@ -595,7 +590,6 @@
       margin-top: 24px;
     }
 
-    /* Loading & Empty */
     .loader-box {
       text-align: center;
       padding: 50px 20px;
@@ -616,7 +610,6 @@
       to { transform: rotate(360deg); }
     }
 
-    /* Modal */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -686,6 +679,16 @@
       padding: 16px 18px;
       overflow-y: auto;
       flex: 1;
+    }
+
+    .guide-box {
+      background: rgba(82, 164, 53, 0.1);
+      border: 1px solid rgba(82, 164, 53, 0.35);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      font-size: 12px;
+      color: #d8f8cc;
     }
 
     .version-filter-row {
@@ -794,70 +797,66 @@
       </div>
       <div class="live-badge">
         <span class="live-dot"></span>
-        <span>Kho Modrinth Live (50.000+ gói)</span>
+        <span>Kho Dữ Liệu Trực Tuyến (50.000+ gói)</span>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <!-- Search & Filter Panel -->
     <section class="search-panel">
       <div class="search-box-wrap">
         <div class="search-input-group">
           <span class="search-icon">🔍</span>
-          <input 
-            type="text" 
-            id="searchInput" 
-            class="search-input" 
-            placeholder="Nhập tiếng Việt hoặc Anh: súng, xe hơi, kinh dị, rồng, giảm lag, shader..."
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Nhập tiếng Việt hoặc tiếng Anh: súng, xe hơi, kinh dị, rồng, fps..."
             autocomplete="off"
           >
-          <button id="clearBtn" class="clear-btn" title="Xóa tìm kiếm">✕</button>
+          <button id="clearBtn" class="clear-btn" title="Xóa ô tìm kiếm">✕</button>
         </div>
         <button id="searchBtn" class="mc-btn">Tìm Kiếm</button>
       </div>
 
-      <!-- Translation Indicator -->
       <div id="translateBanner" class="translate-banner">
         <div>
-          🌐 Đã tự động dịch từ khóa tiếng Việt sang chuẩn quốc tế: 
+          🌐 Đã chuyển từ khóa tiếng Việt sang từ khóa tìm kiếm quốc tế:
           <span id="translatedQueryText" class="translate-tag"></span>
         </div>
-        <button id="useRawQueryBtn" class="vn-chip" style="padding: 3px 9px;">Tìm nguyên gốc</button>
+        <button id="useRawQueryBtn" class="vn-chip" style="padding: 3px 9px;">Tìm đúng chữ bạn gõ</button>
       </div>
 
-      <!-- Quick Vietnamese Chips -->
       <div class="quick-tags-wrap">
         <span class="quick-label">Tìm nhanh:</span>
-        <button class="vn-chip" data-vn="giảm lag tăng fps">⚡ Giảm lag / FPS</button>
-        <button class="vn-chip" data-vn="đồ họa đẹp shader">✨ Đồ họa đẹp</button>
-        <button class="vn-chip" data-vn="súng vũ khí">🔫 Súng &amp; Vũ khí</button>
-        <button class="vn-chip" data-vn="xe hơi phương tiện">🚗 Xe hơi / Máy bay</button>
-        <button class="vn-chip" data-vn="kinh dị ma quái">👻 Kinh dị</button>
-        <button class="vn-chip" data-vn="rồng quái vật">🐉 Rồng &amp; Quái</button>
-        <button class="vn-chip" data-vn="nội thất trang trí">🛋️ Nội thất</button>
-        <button class="vn-chip" data-vn="ba lô túi đồ">🎒 Ba lô</button>
-        <button class="vn-chip" data-vn="bản đồ nhỏ minimap">🗺️ Bản đồ nhỏ</button>
-        <button class="vn-chip" data-vn="công nghệ máy móc">⚙️ Máy móc</button>
-        <button class="vn-chip" data-vn="phép thuật">🔮 Phép thuật</button>
-        <button class="vn-chip" data-vn="pokemon cobblemon">Poké / Cobblemon</button>
-        <button class="vn-chip" data-vn="zombie tận thế">🧟 Zombie</button>
-        <button class="vn-chip" data-vn="sinh tồn hardcore">⚔️ Sinh tồn</button>
+        <button class="vn-chip" data-vn="giảm lag tăng fps" data-en="sodium" data-type="mod">⚡ Giảm lag / FPS</button>
+        <button class="vn-chip" data-vn="đồ họa đẹp shader" data-en="shader" data-type="shader">✨ Đồ họa đẹp</button>
+        <button class="vn-chip" data-vn="súng vũ khí" data-en="gun" data-type="mod">🔫 Súng &amp; Vũ khí</button>
+        <button class="vn-chip" data-vn="xe hơi phương tiện" data-en="car" data-type="mod">🚗 Xe hơi / Phương tiện</button>
+        <button class="vn-chip" data-vn="kinh dị ma quái" data-en="horror" data-type="all">👻 Kinh dị</button>
+        <button class="vn-chip" data-vn="rồng quái vật" data-en="dragon" data-type="mod">🐉 Rồng &amp; Quái</button>
+        <button class="vn-chip" data-vn="nội thất trang trí" data-en="furniture" data-type="mod">🛋️ Nội thất</button>
+        <button class="vn-chip" data-vn="ba lô túi đồ" data-en="backpack" data-type="mod">🎒 Ba lô</button>
+        <button class="vn-chip" data-vn="bản đồ nhỏ" data-en="minimap" data-type="mod">🗺️ Bản đồ nhỏ</button>
+        <button class="vn-chip" data-vn="máy móc công nghệ" data-en="create" data-type="mod">⚙️ Máy móc</button>
+        <button class="vn-chip" data-vn="phép thuật" data-en="magic" data-type="all">🔮 Phép thuật</button>
+        <button class="vn-chip" data-vn="zombie sinh tồn" data-en="zombie" data-type="all">🧟 Zombie</button>
+        <button class="vn-chip" data-vn="modpack sinh tồn" data-en="survival" data-type="modpack">📦 Modpack</button>
+        <button class="vn-chip" data-vn="gói tài nguyên" data-en="texture" data-type="resourcepack">🎨 Gói tài nguyên</button>
       </div>
 
-      <!-- Type & Version Filters -->
       <div class="filters-row">
         <div class="type-tabs" id="typeTabs">
           <button class="type-tab active" data-type="all">Tất cả</button>
           <button class="type-tab" data-type="mod">Mod</button>
           <button class="type-tab" data-type="modpack">Modpack</button>
           <button class="type-tab" data-type="shader">Shader</button>
-          <button class="type-tab" data-type="resourcepack">Texture / Resource</button>
-          <button class="type-tab" data-type="datapack">Data Pack / Map</button>
+          <button class="type-tab" data-type="resourcepack">Tài nguyên / Texture</button>
+          <button class="type-tab" data-type="datapack">Gói dữ liệu / Map</button>
         </div>
 
         <div class="select-controls">
-          <select id="versionSelect" class="mc-select" title="Phiên bản Minecraft">
+          <select id="versionSelect" class="mc-select" title="Lọc theo phiên bản Minecraft">
             <option value="">Mọi phiên bản MC</option>
             <option value="1.21.4">MC 1.21.4</option>
             <option value="1.21.1">MC 1.21.1</option>
@@ -871,7 +870,7 @@
             <option value="1.12.2">MC 1.12.2</option>
           </select>
 
-          <select id="sortSelect" class="mc-select" title="Sắp xếp theo">
+          <select id="sortSelect" class="mc-select" title="Sắp xếp kết quả">
             <option value="relevance">Phù hợp nhất</option>
             <option value="downloads">Tải nhiều nhất</option>
             <option value="follows">Yêu thích nhất</option>
@@ -880,45 +879,40 @@
           </select>
 
           <div class="view-toggle">
-            <button id="gridViewBtn" class="view-btn active" title="Dạng thẻ">⊞ Thẻ</button>
-            <button id="tableViewBtn" class="view-btn" title="Dạng bảng">☰ Bảng</button>
+            <button id="gridViewBtn" class="view-btn active" title="Xem dạng thẻ">⊞ Thẻ</button>
+            <button id="tableViewBtn" class="view-btn" title="Xem dạng bảng">☰ Bảng</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Status Bar -->
     <div class="status-bar">
       <div id="resultStats">Đang tải danh sách phổ biến...</div>
-      <div>💡 Mẹo: Điện thoại Bedrock/PE có thể bấm <b>Tìm trên MCPEDL</b> bên trong từng mục</div>
+      <div>📱 Điện thoại Bedrock / PE: bấm <b>Cài đặt Mod</b> rồi chọn <b>Tìm trên MCPEDL</b> nếu cần bản cho điện thoại</div>
     </div>
 
-    <!-- Loading Indicator -->
     <div id="loaderBox" class="loader-box">
       <div class="spinner"></div>
-      <div>Đang kết nối kho dữ liệu Modrinth...</div>
+      <div>Đang tải danh sách Mod, Modpack và Shader từ máy chủ...</div>
     </div>
 
-    <!-- Results Grid -->
     <section id="modsGrid" class="mods-grid"></section>
 
-    <!-- Results Table -->
     <section id="tableWrap" class="table-wrap">
       <table>
         <thead>
           <tr>
             <th>Tên gói / Tác giả</th>
-            <th>Loại</th>
-            <th>Mô tả ngắn</th>
+            <th>Phân loại</th>
+            <th>Mô tả</th>
             <th>Lượt tải</th>
-            <th>Hành động</th>
+            <th>Cài đặt</th>
           </tr>
         </thead>
         <tbody id="modsTableBody"></tbody>
       </table>
     </section>
 
-    <!-- Pagination -->
     <div id="pagination" class="pagination" style="display: none;">
       <button id="prevPageBtn" class="mc-btn mc-btn-secondary">← Trang trước</button>
       <span id="pageInfo" style="font-weight: 600; font-size: 14px;">Trang 1</span>
@@ -926,21 +920,24 @@
     </div>
   </main>
 
-  <!-- Install / Download Modal -->
   <div id="installModal" class="modal-backdrop">
     <div class="modal-box">
       <div class="modal-header">
         <div class="modal-title-group">
-          <img id="modalIcon" class="modal-icon" src="" alt="icon">
+          <img id="modalIcon" class="modal-icon" src="" alt="Biểu tượng gói">
           <div style="min-width: 0;">
             <h3 id="modalTitle" style="font-size: 17px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Tên Mod</h3>
-            <div id="modalSub" style="font-size: 12px; color: var(--text-muted);">Đang tải danh sách phiên bản...</div>
+            <div id="modalSub" style="font-size: 12px; color: var(--text-muted);">Đang tải danh sách tệp...</div>
           </div>
         </div>
-        <button id="closeModalBtn" class="modal-close">✕</button>
+        <button id="closeModalBtn" class="modal-close" title="Đóng">✕</button>
       </div>
 
       <div class="modal-body">
+        <div class="guide-box">
+          <b>Hướng dẫn nhanh:</b> Chọn nền tảng (Fabric / Forge / NeoForge...) và phiên bản Minecraft khớp với game của bạn rồi bấm <b>Tải Ngay</b>. Tệp tải về cho máy tính Java đặt vào thư mục <code>.minecraft/mods</code>.
+        </div>
+
         <div class="version-filter-row">
           <select id="modalLoaderFilter" class="mc-select">
             <option value="all">Tất cả nền tảng (Fabric / Forge / NeoForge...)</option>
@@ -950,73 +947,60 @@
             <option value="quilt">Quilt</option>
           </select>
           <select id="modalMcVerFilter" class="mc-select">
-            <option value="all">Tất cả phiên bản MC</option>
+            <option value="all">Tất cả phiên bản Minecraft</option>
           </select>
         </div>
 
         <div id="modalVersionsContainer" class="version-list">
           <div class="loader-box" style="padding: 25px;">
             <div class="spinner"></div>
-            <div>Đang lấy link tải trực tiếp...</div>
+            <div>Đang lấy danh sách tệp tải trực tiếp...</div>
           </div>
         </div>
 
         <div class="alt-links">
-          <span>Tìm bản cho ĐT (Bedrock/MCPE) hoặc nguồn khác:</span>
-          <a id="mcpedlSearchLink" class="alt-link-btn" href="#" target="_blank" rel="noopener">📱 Tìm trên MCPEDL (Bedrock)</a>
-          <a id="modrinthPageLink" class="alt-link-btn" href="#" target="_blank" rel="noopener">🌐 Trang gốc Modrinth</a>
+          <span>Tìm bản cho điện thoại (Bedrock / MCPE) hoặc trang gốc:</span>
+          <a id="mcpedlSearchLink" class="alt-link-btn" href="#" target="_blank" rel="noopener">📱 Tìm trên MCPEDL</a>
+          <a id="modrinthPageLink" class="alt-link-btn" href="#" target="_blank" rel="noopener">🌐 Xem trang gốc</a>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-    // =========================================================
-    // BỘ TỪ ĐIỂN ÁNH XẠ TIẾNG VIỆT -> TIẾNG ANH CHO MINECRAFT
-    // =========================================================
-    const VN_DICTIONARY = [
-      // Hiệu năng & Đồ họa
-      { keys: ['giam lag', 'tang fps', 'toi uu', 'muot', 'may yeu', 'nhe'], en: 'sodium optimization fps performance' },
-      { keys: ['do hoa dep', 'do hoa', 'anh sang', 'bong do', 'nuoc dep', 'shader'], en: 'shader bsl complementary' },
-      { keys: ['goi tai nguyen', 'texture', 'dep hon', '3d'], en: 'texture pack 3d' },
-
-      // Vũ khí, Súng, Chiến đấu
-      { keys: ['sung', 'vu khi', 'dan', 'ban sung', 'quan su', 'chien tranh'], en: 'guns weapons firearms' },
-      { keys: ['kiem', 'giap', 'chien dau', 'combo', 'danh nhau'], en: 'weapons armor combat better combat' },
-      { keys: ['bom', 'ten lua', 'no', 'tnt'], en: 'tnt explosives missiles' },
-
-      // Phương tiện
-      { keys: ['xe hoi', 'o to', 'xe co', 'phuong tien', 'xe may', 'xe tang', 'may bay', 'tau thuy'], en: 'vehicles cars planes tanks' },
-
-      // Sinh vật, Quái vật, Kinh dị
-      { keys: ['kinh di', 'ma quai', 'ma', 'dang so', 'am anh', 'dweller'], en: 'horror scary dweller' },
-      { keys: ['rong', 'nuoi rong', 'cuoi rong'], en: 'dragon mounts fire and ice' },
-      { keys: ['quai vat', 'boss', 'trum', 'sinh vat', 'dong vat', 'thu cung'], en: 'mobs bosses animals creatures' },
-      { keys: ['zombie', 'xac song', 'tan the', 'ngay tan the'], en: 'zombie apocalypse' },
-      { keys: ['ky sinh trung', 'parasite'], en: 'parasites' },
-
-      // Nội thất, Xây dựng, Tiện ích
-      { keys: ['noi that', 'trang tri', 'ban ghe', 'nha cua', 'bep', 'tivi'], en: 'furniture decoration' },
-      { keys: ['ba lo', 'tui do', 'balo', 'mang do'], en: 'backpack' },
-      { keys: ['ban do nho', 'ban do', 'minimap', 'dinh vi'], en: 'minimap map' },
-      { keys: ['cong thuc', 'che tao', 'xem do', 'tui do'], en: 'jei recipes items' },
-      { keys: ['chat cay', 'don cay', 'dao nhanh'], en: 'tree harvester veinminer' },
-      { keys: ['hom do', 'ruong', 'kho do'], en: 'storage chests' },
-
-      // Thế giới, Sinh tồn, Phép thuật, Công nghệ
-      { keys: ['sinh ton', 'hardcore', 'kho hon', 'thuc te'], en: 'survival realistic hardcore' },
-      { keys: ['cong nghe', 'may moc', 'tu dong', 'dien', 'nha may'], en: 'create technology machines' },
-      { keys: ['phep thuat', 'phap su', 'dua phep', 'ma thuat'], en: 'magic spells wizard' },
-      { keys: ['ham nguc', 'cau truc', 'ngoi lang', 'lau dai', 'kham pha'], en: 'dungeons structures villages' },
-      { keys: ['chieu khong gian', 'the gioi moi', 'hanh tinh', 'vu tru'], en: 'dimension space planets' },
-      { keys: ['nong trai', 'nau an', 'thuc an', 'trong trot', 'cau ca'], en: 'farming cooking food' },
-      { keys: ['dan lang', 'giao dich', 'linh canh'], en: 'villagers guards' },
-      { keys: ['bien hinh', 'hoa than'], en: 'morph identity' },
-      { keys: ['anime', 'naruto', 'one piece', 'jujutsu', 'thanh guom diet quy'], en: 'anime' },
-      { keys: ['one block', 'mot khoi', 'skyblock', 'dao bay'], en: 'skyblock oneblock' }
+    // Từ điển ánh xạ gọn, chuẩn xác (tránh ghép nhiều từ gây siết kết quả quá mức)
+    const VN_TO_EN_MAP = [
+      { keys: ['giam lag', 'tang fps', 'toi uu', 'muot', 'fps', 'lag', 'may yeu', 'nhe'], en: 'sodium' },
+      { keys: ['do hoa dep', 'do hoa', 'anh sang', 'bong do', 'nuoc dep', 'shader'], en: 'shader' },
+      { keys: ['goi tai nguyen', 'texture', 'tai nguyen', '3d'], en: 'texture' },
+      { keys: ['sung', 'vu khi', 'dan', 'ban sung', 'quan su', 'chien tranh'], en: 'gun' },
+      { keys: ['kiem', 'giap', 'chien dau', 'danh nhau'], en: 'combat' },
+      { keys: ['bom', 'ten lua', 'no', 'tnt'], en: 'tnt' },
+      { keys: ['xe hoi', 'o to', 'xe co', 'phuong tien', 'xe may', 'xe tang', 'may bay', 'tau thuy'], en: 'car' },
+      { keys: ['kinh di', 'ma quai', 'ma', 'dang so', 'am anh', 'dweller'], en: 'horror' },
+      { keys: ['rong', 'nuoi rong', 'cuoi rong'], en: 'dragon' },
+      { keys: ['quai vat', 'boss', 'trum', 'sinh vat', 'dong vat', 'thu cung'], en: 'mobs' },
+      { keys: ['zombie', 'xac song', 'tan the'], en: 'zombie' },
+      { keys: ['ky sinh trung', 'parasite'], en: 'parasite' },
+      { keys: ['noi that', 'trang tri', 'ban ghe', 'nha cua', 'bep', 'tivi'], en: 'furniture' },
+      { keys: ['ba lo', 'tui do', 'balo'], en: 'backpack' },
+      { keys: ['ban do nho', 'ban do', 'minimap', 'dinh vi'], en: 'minimap' },
+      { keys: ['cong thuc', 'che tao', 'xem do'], en: 'jei' },
+      { keys: ['chat cay', 'don cay', 'dao nhanh'], en: 'veinminer' },
+      { keys: ['hom do', 'ruong', 'kho do'], en: 'storage' },
+      { keys: ['sinh ton', 'hardcore', 'kho hon', 'thuc te'], en: 'survival' },
+      { keys: ['cong nghe', 'may moc', 'tu dong', 'dien', 'nha may'], en: 'create' },
+      { keys: ['phep thuat', 'phap su', 'ma thuat'], en: 'magic' },
+      { keys: ['ham nguc', 'cau truc', 'ngoi lang', 'lau dai', 'kham pha'], en: 'structure' },
+      { keys: ['chieu khong gian', 'the gioi moi', 'hanh tinh', 'vu tru'], en: 'dimension' },
+      { keys: ['nong trai', 'nau an', 'thuc an', 'trong trot', 'cau ca'], en: 'farming' },
+      { keys: ['dan lang', 'giao dich', 'linh canh'], en: 'villager' },
+      { keys: ['bien hinh', 'hoa than'], en: 'morph' },
+      { keys: ['anime', 'naruto', 'one piece', 'jujutsu'], en: 'anime' },
+      { keys: ['one block', 'mot khoi', 'skyblock', 'dao bay'], en: 'skyblock' }
     ];
 
-    function removeVietnameseTones(str) {
+    function stripVietnameseTones(str) {
       return str
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '')
@@ -1026,52 +1010,34 @@
         .trim();
     }
 
-    function translateVietnameseQuery(rawInput) {
-      const normalized = removeVietnameseTones(rawInput);
-      if (!normalized) return { query: '', translated: false };
+    function translateQuery(rawInput) {
+      const clean = stripVietnameseTones(rawInput);
+      if (!clean) return { query: '', translated: false };
 
-      let matchedKeywords = [];
-      let remainingText = normalized;
-
-      // Sắp xếp cụm từ dài trước để khớp chính xác nhất
-      const sortedDict = [...VN_DICTIONARY].sort((a, b) => {
+      const sorted = [...VN_TO_EN_MAP].sort((a, b) => {
         const maxA = Math.max(...a.keys.map(k => k.length));
         const maxB = Math.max(...b.keys.map(k => k.length));
         return maxB - maxA;
       });
 
-      for (const entry of sortedDict) {
-        for (const key of entry.keys) {
-          if (remainingText.includes(key)) {
-            matchedKeywords.push(entry.en.split(' ')[0]);
-            // Nếu cụm từ ngắn là toàn bộ truy vấn thì lấy cả cụm tiếng Anh giàu ngữ cảnh
-            if (normalized === key || normalized.length <= key.length + 4) {
-              return { query: entry.en, translated: true };
-            }
-            remainingText = remainingText.replace(key, '').trim();
-            break;
+      for (const item of sorted) {
+        for (const key of item.keys) {
+          if (clean === key || clean.includes(key)) {
+            return { query: item.en, translated: true };
           }
         }
-      }
-
-      if (matchedKeywords.length > 0) {
-        const finalQuery = [...new Set([...matchedKeywords, remainingText])].filter(Boolean).join(' ');
-        return { query: finalQuery, translated: true };
       }
 
       return { query: rawInput.trim(), translated: false };
     }
 
-    // =========================================================
-    // QUẢN LÝ TRẠNG THÁI & GỌI API MODRINTH
-    // =========================================================
     const state = {
       rawQuery: '',
       effectiveQuery: '',
       forceRaw: false,
       projectType: 'all',
       mcVersion: '',
-      sort: 'downloads',
+      sort: 'relevance',
       view: 'grid',
       offset: 0,
       limit: 24,
@@ -1116,7 +1082,7 @@
     function formatNumber(num) {
       if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
       if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
-      return num.toString();
+      return (num || 0).toString();
     }
 
     function getTypeBadge(type) {
@@ -1124,8 +1090,8 @@
         mod: { text: 'Mod', cls: 'badge-mod' },
         modpack: { text: 'Modpack', cls: 'badge-modpack' },
         shader: { text: 'Shader', cls: 'badge-shader' },
-        resourcepack: { text: 'Texture', cls: 'badge-resourcepack' },
-        datapack: { text: 'Data Pack', cls: 'badge-datapack' }
+        resourcepack: { text: 'Tài nguyên', cls: 'badge-resourcepack' },
+        datapack: { text: 'Gói dữ liệu', cls: 'badge-datapack' }
       };
       return map[type] || { text: type, cls: 'badge-loader' };
     }
@@ -1138,9 +1104,8 @@
       el.modsTableBody.innerHTML = '';
       el.pagination.style.display = 'none';
 
-      // Xử lý dịch tiếng Việt
       if (state.rawQuery && !state.forceRaw) {
-        const res = translateVietnameseQuery(state.rawQuery);
+        const res = translateQuery(state.rawQuery);
         state.effectiveQuery = res.query;
         if (res.translated && res.query.toLowerCase() !== state.rawQuery.toLowerCase()) {
           el.translateBanner.classList.add('active');
@@ -1153,7 +1118,6 @@
         el.translateBanner.classList.remove('active');
       }
 
-      // Xây dựng facets cho Modrinth API
       const facets = [];
       if (state.projectType !== 'all') {
         facets.push([`project_type:${state.projectType}`]);
@@ -1171,10 +1135,14 @@
         facets.push([`versions:${state.mcVersion}`]);
       }
 
+      const indexMode = state.effectiveQuery
+        ? state.sort
+        : (state.sort === 'relevance' ? 'downloads' : state.sort);
+
       const params = new URLSearchParams({
         limit: state.limit.toString(),
         offset: state.offset.toString(),
-        index: state.effectiveQuery ? state.sort : (state.sort === 'relevance' ? 'downloads' : state.sort),
+        index: indexMode,
         facets: JSON.stringify(facets)
       });
 
@@ -1184,7 +1152,7 @@
 
       try {
         const response = await fetch(`https://api.modrinth.com/v2/search?${params.toString()}`);
-        if (!response.ok) throw new Error('Lỗi kết nối API');
+        if (!response.ok) throw new Error('Lỗi phản hồi từ máy chủ');
         const data = await response.json();
 
         state.hits = data.hits || [];
@@ -1193,12 +1161,12 @@
         renderResults();
       } catch (err) {
         el.loaderBox.style.display = 'none';
-        el.resultStats.textContent = 'Không thể tải dữ liệu trực tuyến.';
+        el.resultStats.textContent = 'Không thể tải danh sách lúc này.';
         el.modsGrid.innerHTML = `
-          <div style="grid-column: 1/-1; text-align: center; padding: 40px; background: var(--bg-card); border-radius: 12px;">
-            <p style="color: #ff7b7b; font-weight: 700; margin-bottom: 8px;">⚠️ Mất kết nối tới máy chủ Modrinth</p>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">Vui lòng kiểm tra kết nối mạng trên điện thoại/PC và thử lại.</p>
-            <button class="mc-btn" onclick="fetchProjects()">Thử lại ngay</button>
+          <div style="grid-column: 1/-1; text-align: center; padding: 36px; background: var(--bg-card); border-radius: 12px;">
+            <p style="color: #ff7b7b; font-weight: 700; margin-bottom: 8px;">⚠️ Chưa kết nối được tới máy chủ dữ liệu</p>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">Kiểm tra kết nối mạng trên điện thoại hoặc máy tính rồi bấm thử lại.</p>
+            <button class="mc-btn" onclick="fetchProjects()">Thử lại</button>
           </div>
         `;
       }
@@ -1214,16 +1182,18 @@
 
       if (state.hits.length === 0) {
         el.modsGrid.innerHTML = `
-          <div style="grid-column: 1/-1; text-align: center; padding: 45px 20px; background: var(--bg-card); border-radius: 12px;">
+          <div style="grid-column: 1/-1; text-align: center; padding: 40px 20px; background: var(--bg-card); border-radius: 12px;">
             <div style="font-size: 32px; margin-bottom: 8px;">📦</div>
-            <div style="font-weight: 700; margin-bottom: 6px;">Không tìm thấy mod nào khớp từ khóa này</div>
-            <div style="font-size: 13px; color: var(--text-muted);">Hãy thử từ khóa ngắn hơn (ví dụ: <b>súng</b>, <b>xe</b>, <b>rồng</b>, <b>kinh dị</b>) hoặc chọn "Mọi phiên bản MC".</div>
+            <div style="font-weight: 700; margin-bottom: 6px;">Không tìm thấy mục nào với bộ lọc hiện tại</div>
+            <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">Có thể do bộ lọc Phiên bản MC hoặc Tab phân loại đang siết quá chặt.</div>
+            <button class="mc-btn" onclick="resetAll()">Xem tất cả gói phổ biến</button>
           </div>
         `;
+        el.modsGrid.style.display = 'grid';
+        el.tableWrap.style.display = 'none';
         return;
       }
 
-      // Render Grid
       el.modsGrid.innerHTML = state.hits.map(item => {
         const badge = getTypeBadge(item.project_type);
         const icon = item.icon_url || FALLBACK_ICON;
@@ -1238,14 +1208,14 @@
                 <img class="mod-icon" src="${icon}" alt="${item.title}" onerror="this.src='${FALLBACK_ICON}'">
                 <div class="mod-meta">
                   <h3 class="mod-title" title="${item.title}">${item.title}</h3>
-                  <div class="mod-author">bởi ${item.author}</div>
+                  <div class="mod-author">Tác giả: ${item.author}</div>
                   <div class="badges-row">
                     <span class="badge ${badge.cls}">${badge.text}</span>
                     ${loaders.map(l => `<span class="badge badge-loader">${l}</span>`).join('')}
                   </div>
                 </div>
               </div>
-              <p class="mod-desc">${item.description || 'Không có mô tả.'}</p>
+              <p class="mod-desc">${item.description || 'Chưa có mô tả cho gói này.'}</p>
             </div>
             <div class="card-footer">
               <div class="stats">
@@ -1260,7 +1230,6 @@
         `;
       }).join('');
 
-      // Render Table
       el.modsTableBody.innerHTML = state.hits.map(item => {
         const badge = getTypeBadge(item.project_type);
         const icon = item.icon_url || FALLBACK_ICON;
@@ -1271,7 +1240,7 @@
                 <img class="tbl-icon" src="${icon}" alt="" onerror="this.src='${FALLBACK_ICON}'">
                 <div style="min-width:0;">
                   <div style="font-weight:700; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${item.title}</div>
-                  <div style="font-size:11px; color:var(--text-muted);">bởi ${item.author}</div>
+                  <div style="font-size:11px; color:var(--text-muted);">Tác giả: ${item.author}</div>
                 </div>
               </div>
             </td>
@@ -1285,7 +1254,6 @@
         `;
       }).join('');
 
-      // Update View Visibility
       if (state.view === 'grid') {
         el.modsGrid.style.display = 'grid';
         el.tableWrap.style.display = 'none';
@@ -1294,7 +1262,6 @@
         el.tableWrap.style.display = 'block';
       }
 
-      // Update Pagination
       if (state.totalHits > state.limit) {
         el.pagination.style.display = 'flex';
         el.pageInfo.textContent = `Trang ${currentPage} / ${totalPages}`;
@@ -1303,9 +1270,6 @@
       }
     }
 
-    // =========================================================
-    // MODAL TẢI FILE TRỰC TIẾP TỪ MODRINTH
-    // =========================================================
     async function openInstallModal(projectId) {
       const item = state.hits.find(h => h.project_id === projectId);
       if (!item) return;
@@ -1317,11 +1281,11 @@
       el.modrinthPageLink.href = `https://modrinth.com/${item.project_type}/${item.slug}`;
 
       el.modalLoaderFilter.value = 'all';
-      el.modalMcVerFilter.innerHTML = '<option value="all">Tất cả phiên bản MC</option>';
+      el.modalMcVerFilter.innerHTML = '<option value="all">Tất cả phiên bản Minecraft</option>';
       el.modalVersionsContainer.innerHTML = `
         <div class="loader-box" style="padding: 25px;">
           <div class="spinner"></div>
-          <div>Đang lấy danh sách tệp tải trực tiếp (.jar / .mrpack / .zip)...</div>
+          <div>Đang lấy danh sách tệp tải trực tiếp...</div>
         </div>
       `;
 
@@ -1332,7 +1296,6 @@
         const versions = await res.json();
         state.currentVersions = versions || [];
 
-        // Thu thập tất cả phiên bản MC có sẵn trong mod này
         const allMcVers = new Set();
         state.currentVersions.forEach(v => (v.game_versions || []).forEach(gv => allMcVers.add(gv)));
         Array.from(allMcVers).slice(0, 25).forEach(gv => {
@@ -1348,7 +1311,7 @@
 
         renderModalVersions();
       } catch (e) {
-        el.modalVersionsContainer.innerHTML = `<p style="color:#ff7b7b; text-align:center; padding:20px;">Không thể tải danh sách phiên bản. Vui lòng mở trang gốc Modrinth bên dưới.</p>`;
+        el.modalVersionsContainer.innerHTML = `<p style="color:#ff7b7b; text-align:center; padding:20px;">Không thể lấy danh sách tệp. Bạn có thể bấm nút "Xem trang gốc" bên dưới để tải trực tiếp.</p>`;
       }
     }
 
@@ -1363,7 +1326,7 @@
       });
 
       if (filtered.length === 0) {
-        el.modalVersionsContainer.innerHTML = `<div style="text-align:center; padding:24px; color:var(--text-muted);">Không có tệp nào khớp bộ lọc này. Hãy chọn "Tất cả nền tảng" hoặc "Tất cả phiên bản MC".</div>`;
+        el.modalVersionsContainer.innerHTML = `<div style="text-align:center; padding:24px; color:var(--text-muted);">Không có tệp nào khớp bộ lọc đang chọn. Hãy đổi sang "Tất cả nền tảng" hoặc "Tất cả phiên bản Minecraft".</div>`;
         return;
       }
 
@@ -1384,7 +1347,7 @@
                 ${mcVers ? `<span class="ver-tag">🎮 MC ${mcVers}</span>` : ''}
                 <span class="ver-tag">📦 ${sizeMB} MB</span>
               </div>
-              <div style="font-size:11px; color:var(--text-dim); margin-top:3px; word-break:break-all;">${primaryFile.filename}</div>
+              <div style="font-size:11px; color:var(--text-dim); margin-top:3px; word-break:break-all;">Tên tệp: ${primaryFile.filename}</div>
             </div>
             <a href="${primaryFile.url}" class="mc-btn dl-direct-btn" download="${primaryFile.filename}" target="_blank" rel="noopener">
               ⬇️ Tải Ngay
@@ -1394,9 +1357,6 @@
       }).join('');
     }
 
-    // =========================================================
-    // SỰ KIỆN TƯƠNG TÁC
-    // =========================================================
     function triggerSearch(forceRaw = false) {
       state.rawQuery = el.searchInput.value.trim();
       state.forceRaw = forceRaw;
@@ -1428,8 +1388,59 @@
       chip.addEventListener('click', () => {
         document.querySelectorAll('.vn-chip').forEach(c => c.classList.remove('active'));
         chip.classList.add('active');
+
+        const targetType = chip.dataset.type || 'all';
+        state.projectType = targetType;
+        document.querySelectorAll('.type-tab').forEach(t => {
+          t.classList.toggle('active', t.dataset.type === targetType);
+        });
+
         el.searchInput.value = chip.dataset.vn;
-        triggerSearch(false);
+        state.rawQuery = chip.dataset.vn;
+        state.effectiveQuery = chip.dataset.en || chip.dataset.vn;
+        state.forceRaw = false;
+        state.offset = 0;
+        el.clearBtn.classList.add('visible');
+
+        if (state.effectiveQuery.toLowerCase() !== state.rawQuery.toLowerCase()) {
+          el.translateBanner.classList.add('active');
+          el.translatedQueryText.textContent = state.effectiveQuery;
+        } else {
+          el.translateBanner.classList.remove('active');
+        }
+
+        el.loaderBox.style.display = 'block';
+        el.modsGrid.innerHTML = '';
+        el.modsTableBody.innerHTML = '';
+        el.pagination.style.display = 'none';
+
+        const facets = [[targetType === 'all' ? 'project_type:mod' : `project_type:${targetType}`]];
+        if (targetType === 'all') {
+          facets[0] = ['project_type:mod', 'project_type:modpack', 'project_type:shader', 'project_type:resourcepack', 'project_type:datapack'];
+        }
+        if (state.mcVersion) {
+          facets.push([`versions:${state.mcVersion}`]);
+        }
+
+        const params = new URLSearchParams({
+          limit: state.limit.toString(),
+          offset: '0',
+          index: state.sort,
+          query: state.effectiveQuery,
+          facets: JSON.stringify(facets)
+        });
+
+        fetch(`https://api.modrinth.com/v2/search?${params.toString()}`)
+          .then(r => r.json())
+          .then(data => {
+            state.hits = data.hits || [];
+            state.totalHits = data.total_hits || 0;
+            renderResults();
+          })
+          .catch(() => {
+            el.loaderBox.style.display = 'none';
+            el.resultStats.textContent = 'Không thể tải kết quả.';
+          });
       });
     });
 
@@ -1502,16 +1513,15 @@
       state.forceRaw = false;
       state.projectType = 'all';
       state.mcVersion = '';
-      state.sort = 'downloads';
+      state.sort = 'relevance';
       state.offset = 0;
       el.versionSelect.value = '';
-      el.sortSelect.value = 'downloads';
+      el.sortSelect.value = 'relevance';
       document.querySelectorAll('.type-tab').forEach(t => t.classList.remove('active'));
       document.querySelector('.type-tab[data-type="all"]').classList.add('active');
       fetchProjects();
     }
 
-    // Khởi chạy lần đầu
     fetchProjects();
   </script>
 </body>
