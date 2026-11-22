@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MCVault.VN — Tìm Mod Tiếng Việt & Tải Trực Tiếp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=VT323&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-body: #141414;
+      --bg-surface: #1e1e1e;
+      --bg-card: #252525;
+      --bg-card-hover: #2d2d2d;
+      --bg-input: #181818;
+      --border-color: #363636;
+      --mc-green: #52a435;
+      --mc-green-hover: #62bd42;
+      --mc-green-dark: #377322;
+      --mc-gold: #ffaa00;
+      --mc-aqua: #33d6ff;
+      --mc-purple: #b366ff;
+      --mc-red: #ff5555;
+      --text-main: #f2f2f2;
+      --text-muted: #a0a0a0;
+      --text-dim: #757575;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.5;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(82, 164, 53, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 90%, rgba(51, 214, 255, 0.06) 0%, transparent 45%);
+    }
+
+    .pixel-font {
+      font-family: 'VT323', monospace;
+      letter-spacing: 0.5px;
+    }
+
+    /* Header */
+    header {
+      background: rgba(24, 24, 24, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(180deg, #62bd42 0%, #52a435 35%, #6b4423 36%, #4e3119 100%);
+      border: 2px solid #111;
+      border-radius: 6px;
+      box-shadow: inset 0 2px 0 rgba(255,255,255,0.25), 0 3px 0 #0d0d0d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'VT323', monospace;
+      font-size: 24px;
+      color: #fff;
+      text-shadow: 2px 2px 0 #1b3811;
+    }
+
+    .brand-title {
+      font-size: 26px;
+      line-height: 1;
+      color: #fff;
+    }
+
+    .brand-title span {
+      color: var(--mc-green);
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(82, 164, 53, 0.15);
+      border: 1px solid rgba(82, 164, 53, 0.45);
+      color: #82e65c;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: #62bd42;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #62bd42;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 18px 16px 60px;
+    }
+
+    /* Search & Filter Panel */
+    .search-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+
+    .search-box-wrap {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .search-input-group {
+      position: relative;
+      flex: 1;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--bg-input);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      color: #fff;
+      font-size: 15px;
+      padding: 12px 42px 12px 40px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--mc-green);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .clear-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #333;
+      border: none;
+      color: #ccc;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+    }
+
+    .clear-btn.visible {
+      display: flex;
+    }
+
+    .mc-btn {
+      background: var(--mc-green);
+      color: #fff;
+      border: none;
+      border-bottom: 3px solid var(--mc-green-dark);
+      border-radius: var(--radius-md);
+      padding: 0 18px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.12s;
+      white-space: nowrap;
+    }
+
+    .mc-btn:hover {
+      background: var(--mc-green-hover);
+    }
+
+    .mc-btn:active {
+      transform: translateY(2px);
+      border-bottom-width: 1px;
+    }
+
+    .mc-btn-secondary {
+      background: #303030;
+      border-bottom: 3px solid #1c1c1c;
+      color: #e6e6e6;
+    }
+
+    .mc-btn-secondary:hover {
+      background: #3d3d3d;
+    }
+
+    /* Translation Notice */
+    .translate-banner {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: rgba(51, 214, 255, 0.1);
+      border: 1px solid rgba(51, 214, 255, 0.35);
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      color: #bceeff;
+    }
+
+    .translate-banner.active {
+      display: flex;
+    }
+
+    .translate-tag {
+      background: rgba(51, 214, 255, 0.2);
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 5px;
+      font-weight: 700;
+      font-family: monospace;
+    }
+
+    /* Quick Vietnamese Tags */
+    .quick-tags-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+      scrollbar-width: thin;
+    }
+
+    .quick-tags-wrap::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .quick-tags-wrap::-webkit-scrollbar-thumb {
+      background: #3d3d3d;
+      border-radius: 4px;
+    }
+
+    .quick-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .vn-chip {
+      background: #282828;
+      border: 1px solid #3c3c3c;
+      color: #ddd;
+      font-size: 12px;
+      padding: 5px 11px;
+      border-radius: 20px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+
+    .vn-chip:hover, .vn-chip.active {
+      background: rgba(82, 164, 53, 0.22);
+      border-color: var(--mc-green);
+      color: #98f576;
+    }
+
+    /* Filters Row */
+    .filters-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #2e2e2e;
+    }
+
+    .type-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .type-tab {
+      background: #262626;
+      border: 1px solid #383838;
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .type-tab:hover {
+      color: #fff;
+      background: #303030;
+    }
+
+    .type-tab.active {
+      background: var(--mc-green);
+      border-color: var(--mc-green-hover);
+      color: #fff;
+    }
+
+    .select-controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    select.mc-select {
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      color: #eee;
+      padding: 7px 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    select.mc-select:focus {
+      border-color: var(--mc-green);
+    }
+
+    .view-toggle {
+      display: flex;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .view-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .view-btn.active {
+      background: #333;
+      color: #fff;
+    }
+
+    /* Status Bar */
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      font-size: 13px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Grid View */
+    .mods-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 14px;
+    }
+
+    .mod-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s, border-color 0.15s, background 0.15s;
+    }
+
+    .mod-card:hover {
+      background: var(--bg-card-hover);
+      border-color: #525252;
+      transform: translateY(-2px);
+    }
+
+    .card-top {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .mod-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 10px;
+      object-fit: cover;
+      background: #181818;
+      border: 1px solid #3d3d3d;
+      flex-shrink: 0;
+    }
+
+    .mod-meta {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .mod-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 2px;
+    }
+
+    .mod-author {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .badges-row {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+
+    .badge-mod { background: rgba(82, 164, 53, 0.2); color: #82e65c; border: 1px solid rgba(82,164,53,0.4); }
+    .badge-modpack { background: rgba(255, 170, 0, 0.2); color: #ffcc55; border: 1px solid rgba(255,170,0,0.4); }
+    .badge-shader { background: rgba(51, 214, 255, 0.2); color: #7ce4ff; border: 1px solid rgba(51,214,255,0.4); }
+    .badge-resourcepack { background: rgba(179, 102, 255, 0.2); color: #d19eff; border: 1px solid rgba(179,102,255,0.4); }
+    .badge-datapack { background: rgba(255, 85, 85, 0.2); color: #ff8e8e; border: 1px solid rgba(255,85,85,0.4); }
+    .badge-loader { background: #333; color: #ccc; }
+
+    .mod-desc {
+      font-size: 13px;
+      color: #c4c4c4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 12px;
+      min-height: 38px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid #333;
+    }
+
+    .stats {
+      display: flex;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .install-btn {
+      padding: 7px 13px;
+      font-size: 13px;
+    }
+
+    /* Table View */
+    .table-wrap {
+      display: none;
+      overflow-x: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    th {
+      background: #1b1b1b;
+      color: var(--text-muted);
+      font-weight: 700;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 11px 14px;
+      border-bottom: 1px solid #303030;
+      vertical-align: middle;
+    }
+
+    tr:hover td {
+      background: #2b2b2b;
+    }
+
+    .tbl-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 320px;
+    }
+
+    .tbl-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 7px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    /* Loading & Empty */
+    .loader-box {
+      text-align: center;
+      padding: 50px 20px;
+      color: var(--text-muted);
+    }
+
+    .spinner {
+      width: 38px;
+      height: 38px;
+      border: 4px solid #333;
+      border-top-color: var(--mc-green);
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      z-index: 999;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--bg-surface);
+      border: 2px solid #444;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 640px;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.65);
+    }
+
+    .modal-header {
+      padding: 16px 18px;
+      background: #181818;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .modal-title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .modal-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 9px;
+      object-fit: cover;
+      border: 1px solid #444;
+    }
+
+    .modal-close {
+      background: #2c2c2c;
+      border: none;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 16px 18px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .version-filter-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .version-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .version-item {
+      background: #252525;
+      border: 1px solid #383838;
+      border-radius: 10px;
+      padding: 11px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ver-info {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .ver-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .ver-tags {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      font-size: 11px;
+    }
+
+    .ver-tag {
+      background: #181818;
+      border: 1px solid #3a3a3a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #ccc;
+    }
+
+    .dl-direct-btn {
+      text-decoration: none;
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+
+    .alt-links {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px dashed #3d3d3d;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .alt-link-btn {
+      text-decoration: none;
+      background: #2b2b2b;
+      border: 1px solid #444;
+      color: #eee;
+      padding: 6px 10px;
+      border-radius: 7px;
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .alt-link-btn:hover {
+      border-color: var(--mc-aqua);
+      color: var(--mc-aqua);
+    }
+
+    @media (max-width: 600px) {
+      .search-box-wrap { flex-direction: column; }
+      .mc-btn { padding: 11px 16px; }
+      .mods-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand" onclick="resetAll()">
+        <div class="brand-logo">MC</div>
+        <div>
+          <div class="brand-title pixel-font">MCVault<span>.VN</span></div>
+          <span class="brand-sub">Tìm Mod Tiếng Việt &amp; Tải File Trực Tiếp</span>
+        </div>
+      </div>
+      <div class="live-badge">
+        <span class="live-dot"></span>
+        <span>Kho Modrinth Live (50.000+ gói)</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Search & Filter Panel -->
+    <section class="search-panel">
+      <div class="search-box-wrap">
+        <div class="search-input-group">
+          <span class="search-icon">🔍</span>
+          <input 
+            type="text" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="Nhập tiếng Việt hoặc Anh: súng, xe hơi, kinh dị, rồng, giảm lag, shader..."
+            autocomplete="off"
+          >
+          <button id="clearBtn" class="clear-btn" title="Xóa tìm kiếm">✕</button>
+        </div>
+        <button id="searchBtn" class="mc-btn">Tìm Kiếm</button>
+      </div>
+
+      <!-- Translation Indicator -->
+      <div id="translateBanner" class="translate-banner">
+        <div>
+          🌐 Đã tự động dịch từ khóa tiếng Việt sang chuẩn quốc tế: 
+          <span id="translatedQueryText" class="translate-tag"></span>
+        </div>
+        <button id="useRawQueryBtn" class="vn-chip" style="padding: 3px 9px;">Tìm nguyên gốc</button>
+      </div>
+
+      <!-- Quick Vietnamese Chips -->
+      <div class="quick-tags-wrap">
+        <span class="quick-label">Tìm nhanh:</span>
+        <button class="vn-chip" data-vn="giảm lag tăng fps">⚡ Giảm lag / FPS</button>
+        <button class="vn-chip" data-vn="đồ họa đẹp shader">✨ Đồ họa đẹp</button>
+        <button class="vn-chip" data-vn="súng vũ khí">🔫 Súng &amp; Vũ khí</button>
+        <button class="vn-chip" data-vn="xe hơi phương tiện">🚗 Xe hơi / Máy bay</button>
+        <button class="vn-chip" data-vn="kinh dị ma quái">👻 Kinh dị</button>
+        <button class="vn-chip" data-vn="rồng quái vật">🐉 Rồng &amp; Quái</button>
+        <button class="vn-chip" data-vn="nội thất trang trí">🛋️ Nội thất</button>
+        <button class="vn-chip" data-vn="ba lô túi đồ">🎒 Ba lô</button>
+        <button class="vn-chip" data-vn="bản đồ nhỏ minimap">🗺️ Bản đồ nhỏ</button>
+        <button class="vn-chip" data-vn="công nghệ máy móc">⚙️ Máy móc</button>
+        <button class="vn-chip" data-vn="phép thuật">🔮 Phép thuật</button>
+        <button class="vn-chip" data-vn="pokemon cobblemon">Poké / Cobblemon</button>
+        <button class="vn-chip" data-vn="zombie tận thế">🧟 Zombie</button>
+        <button class="vn-chip" data-vn="sinh tồn hardcore">⚔️ Sinh tồn</button>
+      </div>
+
+      <!-- Type & Version Filters -->
+      <div class="filters-row">
+        <div class="type-tabs" id="typeTabs">
+          <button class="type-tab active" data-type="all">Tất cả</button>
+          <button class="type-tab" data-type="mod">Mod</button>
+          <button class="type-tab" data-type="modpack">Modpack</button>
+          <button class="type-tab" data-type="shader">Shader</button>
+          <button class="type-tab" data-type="resourcepack">Texture / Resource</button>
+          <button class="type-tab" data-type="datapack">Data Pack / Map</button>
+        </div>
+
+        <div class="select-controls">
+          <select id="versionSelect" class="mc-select" title="Phiên bản Minecraft">
+            <option value="">Mọi phiên bản MC</option>
+            <option value="1.21.4">MC 1.21.4</option>
+            <option value="1.21.1">MC 1.21.1</option>
+            <option value="1.21">MC 1.21</option>
+            <option value="1.20.4">MC 1.20.4</option>
+            <option value="1.20.1">MC 1.20.1</option>
+            <option value="1.19.4">MC 1.19.4</option>
+            <option value="1.19.2">MC 1.19.2</option>
+            <option value="1.18.2">MC 1.18.2</option>
+            <option value="1.16.5">MC 1.16.5</option>
+            <option value="1.12.2">MC 1.12.2</option>
+          </select>
+
+          <select id="sortSelect" class="mc-select" title="Sắp xếp theo">
+            <option value="relevance">Phù hợp nhất</option>
+            <option value="downloads">Tải nhiều nhất</option>
+            <option value="follows">Yêu thích nhất</option>
+            <option value="newest">Mới nhất</option>
+            <option value="updated">Mới cập nhật</option>
+          </select>
+
+          <div class="view-toggle">
+            <button id="gridViewBtn" class="view-btn active" title="Dạng thẻ">⊞ Thẻ</button>
+            <button id="tableViewBtn" class="view-btn" title="Dạng bảng">☰ Bảng</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <div id="resultStats">Đang tải danh sách phổ biến...</div>
+      <div>💡 Mẹo: Điện thoại Bedrock/PE có thể bấm <b>Tìm trên MCPEDL</b> bên trong từng mục</div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loaderBox" class="loader-box">
+      <div class="spinner"></div>
+      <div>Đang kết nối kho dữ liệu Modrinth...</div>
+    </div>
+
+    <!-- Results Grid -->
+    <section id="modsGrid" class="mods-grid"></section>
+
+    <!-- Results Table -->
+    <section id="tableWrap" class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Tên gói / Tác giả</th>
+            <th>Loại</th>
+            <th>Mô tả ngắn</th>
+            <th>Lượt tải</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody id="modsTableBody"></tbody>
+      </table>
+    </section>
+
+    <!-- Pagination -->
+    <div id="pagination" class="pagination" style="display: none;">
+      <button id="prevPageBtn" class="mc-btn mc-btn-secondary">← Trang trước</button>
+      <span id="pageInfo" style="font-weight: 600; font-size: 14px;">Trang 1</span>
+      <button id="nextPageBtn" class="mc-btn mc-btn-secondary">Trang sau →</button>
+    </div>
+  </main>
+
+  <!-- Install / Download Modal -->
+  <div id="installModal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <img id="modalIcon" class="modal-icon" src="" alt="icon">
+          <div style="min-width: 0;">
+            <h3 id="modalTitle" style="font-size: 17px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Tên Mod</h3>
+            <div id="modalSub" style="font-size: 12px; color: var(--text-muted);">Đang tải danh sách phiên bản...</div>
+          </div>
+        </div>
+        <button id="closeModalBtn" class="modal-close">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="version-filter-row">
+          <select id="modalLoaderFilter" class="mc-select">
+            <option value="all">Tất cả nền tảng (Fabric / Forge / NeoForge...)</option>
+            <option value="fabric">Fabric</option>
+            <option value="forge">Forge</option>
+            <option value="neoforge">NeoForge</option>
+            <option value="quilt">Quilt</option>
+          </select>
+          <select id="modalMcVerFilter" class="mc-select">
+            <option value="all">Tất cả phiên bản MC</option>
+          </select>
+        </div>
+
+        <div id="modalVersionsContainer" class="version-list">
+          <div class="loader-box" style="padding: 25px;">
+            <div class="spinner"></div>
+            <div>Đang lấy link tải trực tiếp...</div>
+          </div>
+        </div>
+
+        <div class="alt-links">
+          <span>Tìm bản cho ĐT (Bedrock/MCPE) hoặc nguồn khác:</span>
+          <a id="mcpedlSearchLink" class="alt-link-btn" href="#" target="_blank" rel="noopener">📱 Tìm trên MCPEDL (Bedrock)</a>
+          <a id="modrinthPageLink" class="alt-link-btn" href="#" target="_blank" rel="noopener">🌐 Trang gốc Modrinth</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================
+    // BỘ TỪ ĐIỂN ÁNH XẠ TIẾNG VIỆT -> TIẾNG ANH CHO MINECRAFT
+    // =========================================================
+    const VN_DICTIONARY = [
+      // Hiệu năng & Đồ họa
+      { keys: ['giam lag', 'tang fps', 'toi uu', 'muot', 'may yeu', 'nhe'], en: 'sodium optimization fps performance' },
+      { keys: ['do hoa dep', 'do hoa', 'anh sang', 'bong do', 'nuoc dep', 'shader'], en: 'shader bsl complementary' },
+      { keys: ['goi tai nguyen', 'texture', 'dep hon', '3d'], en: 'texture pack 3d' },
+
+      // Vũ khí, Súng, Chiến đấu
+      { keys: ['sung', 'vu khi', 'dan', 'ban sung', 'quan su', 'chien tranh'], en: 'guns weapons firearms' },
+      { keys: ['kiem', 'giap', 'chien dau', 'combo', 'danh nhau'], en: 'weapons armor combat better combat' },
+      { keys: ['bom', 'ten lua', 'no', 'tnt'], en: 'tnt explosives missiles' },
+
+      // Phương tiện
+      { keys: ['xe hoi', 'o to', 'xe co', 'phuong tien', 'xe may', 'xe tang', 'may bay', 'tau thuy'], en: 'vehicles cars planes tanks' },
+
+      // Sinh vật, Quái vật, Kinh dị
+      { keys: ['kinh di', 'ma quai', 'ma', 'dang so', 'am anh', 'dweller'], en: 'horror scary dweller' },
+      { keys: ['rong', 'nuoi rong', 'cuoi rong'], en: 'dragon mounts fire and ice' },
+      { keys: ['quai vat', 'boss', 'trum', 'sinh vat', 'dong vat', 'thu cung'], en: 'mobs bosses animals creatures' },
+      { keys: ['zombie', 'xac song', 'tan the', 'ngay tan the'], en: 'zombie apocalypse' },
+      { keys: ['ky sinh trung', 'parasite'], en: 'parasites' },
+
+      // Nội thất, Xây dựng, Tiện ích
+      { keys: ['noi that', 'trang tri', 'ban ghe', 'nha cua', 'bep', 'tivi'], en: 'furniture decoration' },
+      { keys: ['ba lo', 'tui do', 'balo', 'mang do'], en: 'backpack' },
+      { keys: ['ban do nho', 'ban do', 'minimap', 'dinh vi'], en: 'minimap map' },
+      { keys: ['cong thuc', 'che tao', 'xem do', 'tui do'], en: 'jei recipes items' },
+      { keys: ['chat cay', 'don cay', 'dao nhanh'], en: 'tree harvester veinminer' },
+      { keys: ['hom do', 'ruong', 'kho do'], en: 'storage chests' },
+
+      // Thế giới, Sinh tồn, Phép thuật, Công nghệ
+      { keys: ['sinh ton', 'hardcore', 'kho hon', 'thuc te'], en: 'survival realistic hardcore' },
+      { keys: ['cong nghe', 'may moc', 'tu dong', 'dien', 'nha may'], en: 'create technology machines' },
+      { keys: ['phep thuat', 'phap su', 'dua phep', 'ma thuat'], en: 'magic spells wizard' },
+      { keys: ['ham nguc', 'cau truc', 'ngoi lang', 'lau dai', 'kham pha'], en: 'dungeons structures villages' },
+      { keys: ['chieu khong gian', 'the gioi moi', 'hanh tinh', 'vu tru'], en: 'dimension space planets' },
+      { keys: ['nong trai', 'nau an', 'thuc an', 'trong trot', 'cau ca'], en: 'farming cooking food' },
+      { keys: ['dan lang', 'giao dich', 'linh canh'], en: 'villagers guards' },
+      { keys: ['bien hinh', 'hoa than'], en: 'morph identity' },
+      { keys: ['anime', 'naruto', 'one piece', 'jujutsu', 'thanh guom diet quy'], en: 'anime' },
+      { keys: ['one block', 'mot khoi', 'skyblock', 'dao bay'], en: 'skyblock oneblock' }
+    ];
+
+    function removeVietnameseTones(str) {
+      return str
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/đ/g, 'd')
+        .replace(/Đ/g, 'D')
+        .toLowerCase()
+        .trim();
+    }
+
+    function translateVietnameseQuery(rawInput) {
+      const normalized = removeVietnameseTones(rawInput);
+      if (!normalized) return { query: '', translated: false };
+
+      let matchedKeywords = [];
+      let remainingText = normalized;
+
+      // Sắp xếp cụm từ dài trước để khớp chính xác nhất
+      const sortedDict = [...VN_DICTIONARY].sort((a, b) => {
+        const maxA = Math.max(...a.keys.map(k => k.length));
+        const maxB = Math.max(...b.keys.map(k => k.length));
+        return maxB - maxA;
+      });
+
+      for (const entry of sortedDict) {
+        for (const key of entry.keys) {
+          if (remainingText.includes(key)) {
+            matchedKeywords.push(entry.en.split(' ')[0]);
+            // Nếu cụm từ ngắn là toàn bộ truy vấn thì lấy cả cụm tiếng Anh giàu ngữ cảnh
+            if (normalized === key || normalized.length <= key.length + 4) {
+              return { query: entry.en, translated: true };
+            }
+            remainingText = remainingText.replace(key, '').trim();
+            break;
+          }
+        }
+      }
+
+      if (matchedKeywords.length > 0) {
+        const finalQuery = [...new Set([...matchedKeywords, remainingText])].filter(Boolean).join(' ');
+        return { query: finalQuery, translated: true };
+      }
+
+      return { query: rawInput.trim(), translated: false };
+    }
+
+    // =========================================================
+    // QUẢN LÝ TRẠNG THÁI & GỌI API MODRINTH
+    // =========================================================
+    const state = {
+      rawQuery: '',
+      effectiveQuery: '',
+      forceRaw: false,
+      projectType: 'all',
+      mcVersion: '',
+      sort: 'downloads',
+      view: 'grid',
+      offset: 0,
+      limit: 24,
+      totalHits: 0,
+      hits: [],
+      currentVersions: []
+    };
+
+    const el = {
+      searchInput: document.getElementById('searchInput'),
+      clearBtn: document.getElementById('clearBtn'),
+      searchBtn: document.getElementById('searchBtn'),
+      translateBanner: document.getElementById('translateBanner'),
+      translatedQueryText: document.getElementById('translatedQueryText'),
+      useRawQueryBtn: document.getElementById('useRawQueryBtn'),
+      typeTabs: document.getElementById('typeTabs'),
+      versionSelect: document.getElementById('versionSelect'),
+      sortSelect: document.getElementById('sortSelect'),
+      gridViewBtn: document.getElementById('gridViewBtn'),
+      tableViewBtn: document.getElementById('tableViewBtn'),
+      resultStats: document.getElementById('resultStats'),
+      loaderBox: document.getElementById('loaderBox'),
+      modsGrid: document.getElementById('modsGrid'),
+      tableWrap: document.getElementById('tableWrap'),
+      modsTableBody: document.getElementById('modsTableBody'),
+      pagination: document.getElementById('pagination'),
+      prevPageBtn: document.getElementById('prevPageBtn'),
+      nextPageBtn: document.getElementById('nextPageBtn'),
+      pageInfo: document.getElementById('pageInfo'),
+      installModal: document.getElementById('installModal'),
+      closeModalBtn: document.getElementById('closeModalBtn'),
+      modalIcon: document.getElementById('modalIcon'),
+      modalTitle: document.getElementById('modalTitle'),
+      modalSub: document.getElementById('modalSub'),
+      modalLoaderFilter: document.getElementById('modalLoaderFilter'),
+      modalMcVerFilter: document.getElementById('modalMcVerFilter'),
+      modalVersionsContainer: document.getElementById('modalVersionsContainer'),
+      mcpedlSearchLink: document.getElementById('mcpedlSearchLink'),
+      modrinthPageLink: document.getElementById('modrinthPageLink')
+    };
+
+    function formatNumber(num) {
+      if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+      if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+      return num.toString();
+    }
+
+    function getTypeBadge(type) {
+      const map = {
+        mod: { text: 'Mod', cls: 'badge-mod' },
+        modpack: { text: 'Modpack', cls: 'badge-modpack' },
+        shader: { text: 'Shader', cls: 'badge-shader' },
+        resourcepack: { text: 'Texture', cls: 'badge-resourcepack' },
+        datapack: { text: 'Data Pack', cls: 'badge-datapack' }
+      };
+      return map[type] || { text: type, cls: 'badge-loader' };
+    }
+
+    const FALLBACK_ICON = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 16 16"><rect width="16" height="16" fill="%23593d29"/><rect width="16" height="5" fill="%2352a435"/><rect x="2" y="5" width="3" height="2" fill="%2352a435"/><rect x="9" y="5" width="4" height="2" fill="%2352a435"/></svg>';
+
+    async function fetchProjects() {
+      el.loaderBox.style.display = 'block';
+      el.modsGrid.innerHTML = '';
+      el.modsTableBody.innerHTML = '';
+      el.pagination.style.display = 'none';
+
+      // Xử lý dịch tiếng Việt
+      if (state.rawQuery && !state.forceRaw) {
+        const res = translateVietnameseQuery(state.rawQuery);
+        state.effectiveQuery = res.query;
+        if (res.translated && res.query.toLowerCase() !== state.rawQuery.toLowerCase()) {
+          el.translateBanner.classList.add('active');
+          el.translatedQueryText.textContent = res.query;
+        } else {
+          el.translateBanner.classList.remove('active');
+        }
+      } else {
+        state.effectiveQuery = state.rawQuery;
+        el.translateBanner.classList.remove('active');
+      }
+
+      // Xây dựng facets cho Modrinth API
+      const facets = [];
+      if (state.projectType !== 'all') {
+        facets.push([`project_type:${state.projectType}`]);
+      } else {
+        facets.push([
+          'project_type:mod',
+          'project_type:modpack',
+          'project_type:shader',
+          'project_type:resourcepack',
+          'project_type:datapack'
+        ]);
+      }
+
+      if (state.mcVersion) {
+        facets.push([`versions:${state.mcVersion}`]);
+      }
+
+      const params = new URLSearchParams({
+        limit: state.limit.toString(),
+        offset: state.offset.toString(),
+        index: state.effectiveQuery ? state.sort : (state.sort === 'relevance' ? 'downloads' : state.sort),
+        facets: JSON.stringify(facets)
+      });
+
+      if (state.effectiveQuery) {
+        params.set('query', state.effectiveQuery);
+      }
+
+      try {
+        const response = await fetch(`https://api.modrinth.com/v2/search?${params.toString()}`);
+        if (!response.ok) throw new Error('Lỗi kết nối API');
+        const data = await response.json();
+
+        state.hits = data.hits || [];
+        state.totalHits = data.total_hits || 0;
+
+        renderResults();
+      } catch (err) {
+        el.loaderBox.style.display = 'none';
+        el.resultStats.textContent = 'Không thể tải dữ liệu trực tuyến.';
+        el.modsGrid.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 40px; background: var(--bg-card); border-radius: 12px;">
+            <p style="color: #ff7b7b; font-weight: 700; margin-bottom: 8px;">⚠️ Mất kết nối tới máy chủ Modrinth</p>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">Vui lòng kiểm tra kết nối mạng trên điện thoại/PC và thử lại.</p>
+            <button class="mc-btn" onclick="fetchProjects()">Thử lại ngay</button>
+          </div>
+        `;
+      }
+    }
+
+    function renderResults() {
+      el.loaderBox.style.display = 'none';
+
+      const currentPage = Math.floor(state.offset / state.limit) + 1;
+      const totalPages = Math.max(1, Math.ceil(state.totalHits / state.limit));
+
+      el.resultStats.innerHTML = `Tìm thấy <b>${state.totalHits.toLocaleString('vi-VN')}</b> gói phù hợp (Trang ${currentPage}/${totalPages})`;
+
+      if (state.hits.length === 0) {
+        el.modsGrid.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 45px 20px; background: var(--bg-card); border-radius: 12px;">
+            <div style="font-size: 32px; margin-bottom: 8px;">📦</div>
+            <div style="font-weight: 700; margin-bottom: 6px;">Không tìm thấy mod nào khớp từ khóa này</div>
+            <div style="font-size: 13px; color: var(--text-muted);">Hãy thử từ khóa ngắn hơn (ví dụ: <b>súng</b>, <b>xe</b>, <b>rồng</b>, <b>kinh dị</b>) hoặc chọn "Mọi phiên bản MC".</div>
+          </div>
+        `;
+        return;
+      }
+
+      // Render Grid
+      el.modsGrid.innerHTML = state.hits.map(item => {
+        const badge = getTypeBadge(item.project_type);
+        const icon = item.icon_url || FALLBACK_ICON;
+        const loaders = (item.categories || [])
+          .filter(c => ['fabric', 'forge', 'neoforge', 'quilt', 'iris', 'optifine'].includes(c))
+          .slice(0, 2);
+
+        return `
+          <article class="mod-card">
+            <div>
+              <div class="card-top">
+                <img class="mod-icon" src="${icon}" alt="${item.title}" onerror="this.src='${FALLBACK_ICON}'">
+                <div class="mod-meta">
+                  <h3 class="mod-title" title="${item.title}">${item.title}</h3>
+                  <div class="mod-author">bởi ${item.author}</div>
+                  <div class="badges-row">
+                    <span class="badge ${badge.cls}">${badge.text}</span>
+                    ${loaders.map(l => `<span class="badge badge-loader">${l}</span>`).join('')}
+                  </div>
+                </div>
+              </div>
+              <p class="mod-desc">${item.description || 'Không có mô tả.'}</p>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <span>⬇️ ${formatNumber(item.downloads)}</span>
+                <span>❤️ ${formatNumber(item.follows)}</span>
+              </div>
+              <button class="mc-btn install-btn" onclick="openInstallModal('${item.project_id}')">
+                Cài đặt Mod
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      // Render Table
+      el.modsTableBody.innerHTML = state.hits.map(item => {
+        const badge = getTypeBadge(item.project_type);
+        const icon = item.icon_url || FALLBACK_ICON;
+        return `
+          <tr>
+            <td>
+              <div class="tbl-item">
+                <img class="tbl-icon" src="${icon}" alt="" onerror="this.src='${FALLBACK_ICON}'">
+                <div style="min-width:0;">
+                  <div style="font-weight:700; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${item.title}</div>
+                  <div style="font-size:11px; color:var(--text-muted);">bởi ${item.author}</div>
+                </div>
+              </div>
+            </td>
+            <td><span class="badge ${badge.cls}">${badge.text}</span></td>
+            <td style="max-width: 340px; color: #ccc;">${(item.description || '').slice(0, 95)}${(item.description || '').length > 95 ? '...' : ''}</td>
+            <td style="white-space:nowrap;">⬇️ ${formatNumber(item.downloads)}</td>
+            <td>
+              <button class="mc-btn install-btn" onclick="openInstallModal('${item.project_id}')">Cài đặt</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      // Update View Visibility
+      if (state.view === 'grid') {
+        el.modsGrid.style.display = 'grid';
+        el.tableWrap.style.display = 'none';
+      } else {
+        el.modsGrid.style.display = 'none';
+        el.tableWrap.style.display = 'block';
+      }
+
+      // Update Pagination
+      if (state.totalHits > state.limit) {
+        el.pagination.style.display = 'flex';
+        el.pageInfo.textContent = `Trang ${currentPage} / ${totalPages}`;
+        el.prevPageBtn.disabled = state.offset === 0;
+        el.nextPageBtn.disabled = state.offset + state.limit >= state.totalHits;
+      }
+    }
+
+    // =========================================================
+    // MODAL TẢI FILE TRỰC TIẾP TỪ MODRINTH
+    // =========================================================
+    async function openInstallModal(projectId) {
+      const item = state.hits.find(h => h.project_id === projectId);
+      if (!item) return;
+
+      el.modalIcon.src = item.icon_url || FALLBACK_ICON;
+      el.modalTitle.textContent = item.title;
+      el.modalSub.textContent = `Tác giả: ${item.author} • ${formatNumber(item.downloads)} lượt tải`;
+      el.mcpedlSearchLink.href = `https://mcpedl.com/?s=${encodeURIComponent(item.title)}`;
+      el.modrinthPageLink.href = `https://modrinth.com/${item.project_type}/${item.slug}`;
+
+      el.modalLoaderFilter.value = 'all';
+      el.modalMcVerFilter.innerHTML = '<option value="all">Tất cả phiên bản MC</option>';
+      el.modalVersionsContainer.innerHTML = `
+        <div class="loader-box" style="padding: 25px;">
+          <div class="spinner"></div>
+          <div>Đang lấy danh sách tệp tải trực tiếp (.jar / .mrpack / .zip)...</div>
+        </div>
+      `;
+
+      el.installModal.classList.add('open');
+
+      try {
+        const res = await fetch(`https://api.modrinth.com/v2/project/${projectId}/version`);
+        const versions = await res.json();
+        state.currentVersions = versions || [];
+
+        // Thu thập tất cả phiên bản MC có sẵn trong mod này
+        const allMcVers = new Set();
+        state.currentVersions.forEach(v => (v.game_versions || []).forEach(gv => allMcVers.add(gv)));
+        Array.from(allMcVers).slice(0, 25).forEach(gv => {
+          const opt = document.createElement('option');
+          opt.value = gv;
+          opt.textContent = `MC ${gv}`;
+          el.modalMcVerFilter.appendChild(opt);
+        });
+
+        if (state.mcVersion && allMcVers.has(state.mcVersion)) {
+          el.modalMcVerFilter.value = state.mcVersion;
+        }
+
+        renderModalVersions();
+      } catch (e) {
+        el.modalVersionsContainer.innerHTML = `<p style="color:#ff7b7b; text-align:center; padding:20px;">Không thể tải danh sách phiên bản. Vui lòng mở trang gốc Modrinth bên dưới.</p>`;
+      }
+    }
+
+    function renderModalVersions() {
+      const loaderFilter = el.modalLoaderFilter.value;
+      const mcVerFilter = el.modalMcVerFilter.value;
+
+      const filtered = state.currentVersions.filter(v => {
+        const matchLoader = loaderFilter === 'all' || (v.loaders || []).includes(loaderFilter);
+        const matchVer = mcVerFilter === 'all' || (v.game_versions || []).includes(mcVerFilter);
+        return matchLoader && matchVer;
+      });
+
+      if (filtered.length === 0) {
+        el.modalVersionsContainer.innerHTML = `<div style="text-align:center; padding:24px; color:var(--text-muted);">Không có tệp nào khớp bộ lọc này. Hãy chọn "Tất cả nền tảng" hoặc "Tất cả phiên bản MC".</div>`;
+        return;
+      }
+
+      el.modalVersionsContainer.innerHTML = filtered.slice(0, 30).map(v => {
+        const primaryFile = (v.files || []).find(f => f.primary) || (v.files || [])[0];
+        if (!primaryFile) return '';
+
+        const sizeMB = (primaryFile.size / (1024 * 1024)).toFixed(2);
+        const loaders = (v.loaders || []).join(', ');
+        const mcVers = (v.game_versions || []).slice(0, 3).join(', ');
+
+        return `
+          <div class="version-item">
+            <div class="ver-info">
+              <div class="ver-name">${v.name || v.version_number}</div>
+              <div class="ver-tags">
+                ${loaders ? `<span class="ver-tag" style="color:#82e65c;">⚙️ ${loaders}</span>` : ''}
+                ${mcVers ? `<span class="ver-tag">🎮 MC ${mcVers}</span>` : ''}
+                <span class="ver-tag">📦 ${sizeMB} MB</span>
+              </div>
+              <div style="font-size:11px; color:var(--text-dim); margin-top:3px; word-break:break-all;">${primaryFile.filename}</div>
+            </div>
+            <a href="${primaryFile.url}" class="mc-btn dl-direct-btn" download="${primaryFile.filename}" target="_blank" rel="noopener">
+              ⬇️ Tải Ngay
+            </a>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // =========================================================
+    // SỰ KIỆN TƯƠNG TÁC
+    // =========================================================
+    function triggerSearch(forceRaw = false) {
+      state.rawQuery = el.searchInput.value.trim();
+      state.forceRaw = forceRaw;
+      state.offset = 0;
+      el.clearBtn.classList.toggle('visible', state.rawQuery.length > 0);
+      fetchProjects();
+    }
+
+    el.searchBtn.addEventListener('click', () => triggerSearch(false));
+    el.searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') triggerSearch(false);
+    });
+    el.searchInput.addEventListener('input', () => {
+      el.clearBtn.classList.toggle('visible', el.searchInput.value.length > 0);
+    });
+
+    el.clearBtn.addEventListener('click', () => {
+      el.searchInput.value = '';
+      el.clearBtn.classList.remove('visible');
+      document.querySelectorAll('.vn-chip').forEach(c => c.classList.remove('active'));
+      triggerSearch(false);
+    });
+
+    el.useRawQueryBtn.addEventListener('click', () => {
+      triggerSearch(true);
+    });
+
+    document.querySelectorAll('.vn-chip[data-vn]').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.vn-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        el.searchInput.value = chip.dataset.vn;
+        triggerSearch(false);
+      });
+    });
+
+    el.typeTabs.addEventListener('click', (e) => {
+      const btn = e.target.closest('.type-tab');
+      if (!btn) return;
+      document.querySelectorAll('.type-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      state.projectType = btn.dataset.type;
+      state.offset = 0;
+      fetchProjects();
+    });
+
+    el.versionSelect.addEventListener('change', () => {
+      state.mcVersion = el.versionSelect.value;
+      state.offset = 0;
+      fetchProjects();
+    });
+
+    el.sortSelect.addEventListener('change', () => {
+      state.sort = el.sortSelect.value;
+      state.offset = 0;
+      fetchProjects();
+    });
+
+    el.gridViewBtn.addEventListener('click', () => {
+      state.view = 'grid';
+      el.gridViewBtn.classList.add('active');
+      el.tableViewBtn.classList.remove('active');
+      renderResults();
+    });
+
+    el.tableViewBtn.addEventListener('click', () => {
+      state.view = 'table';
+      el.tableViewBtn.classList.add('active');
+      el.gridViewBtn.classList.remove('active');
+      renderResults();
+    });
+
+    el.prevPageBtn.addEventListener('click', () => {
+      if (state.offset >= state.limit) {
+        state.offset -= state.limit;
+        fetchProjects();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    el.nextPageBtn.addEventListener('click', () => {
+      if (state.offset + state.limit < state.totalHits) {
+        state.offset += state.limit;
+        fetchProjects();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    el.modalLoaderFilter.addEventListener('change', renderModalVersions);
+    el.modalMcVerFilter.addEventListener('change', renderModalVersions);
+
+    el.closeModalBtn.addEventListener('click', () => el.installModal.classList.remove('open'));
+    el.installModal.addEventListener('click', (e) => {
+      if (e.target === el.installModal) el.installModal.classList.remove('open');
+    });
+
+    function resetAll() {
+      el.searchInput.value = '';
+      el.clearBtn.classList.remove('visible');
+      document.querySelectorAll('.vn-chip').forEach(c => c.classList.remove('active'));
+      state.rawQuery = '';
+      state.effectiveQuery = '';
+      state.forceRaw = false;
+      state.projectType = 'all';
+      state.mcVersion = '';
+      state.sort = 'downloads';
+      state.offset = 0;
+      el.versionSelect.value = '';
+      el.sortSelect.value = 'downloads';
+      document.querySelectorAll('.type-tab').forEach(t => t.classList.remove('active'));
+      document.querySelector('.type-tab[data-type="all"]').classList.add('active');
+      fetchProjects();
+    }
+
+    // Khởi chạy lần đầu
+    fetchProjects();
+  </script>
+</body>
+</html>
